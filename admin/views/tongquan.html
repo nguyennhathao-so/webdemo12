@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        a{
+            text-decoration: none;
+            color:#000000;
+        }
+        body{
+            color: #000000;
+            background-color: #E9E9E9;
+            font-family: Inter;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .tongquan--header {
+            padding: 22px;
+            background-color: #ffffff;
+            text-align: center;
+            font-size: clamp(16px, 40px);;
+            font-weight:bold;
+            user-select: none;
+            text-transform: uppercase;
+        }
+        .tongquan--solieu{
+            display: flex;
+            justify-content: space-around;
+            padding:28px 0;
+
+        }
+
+        .tongquan--solieu--item{
+            padding:20px;
+            min-width: 20%;         
+        }
+        .container .container--title{
+            padding: 10px;
+            background-color: #ffffff;
+            margin: 0 auto;
+        }
+
+    </style>
+    <title>Tổng quan</title>
+</head>
+<body>
+    <div class="tongquan" style="width:100%;height:100%;min-height:100vh">
+        <h2 class="tongquan--header">Tổng quan</h2>
+        <div class="tongquan--content" style ="user-select:none;background-color: white;margin:25px auto 0; width:97%;height:97%;min-height:97vh">
+            <div class="tongquan--solieu">
+                <div class="tongquan--solieu--item" style=" border:2px solid #0CB311">
+                    <h6 style="font-size: 20px;">Tổng số vé bán ra</h6>
+                    <span style="font-size: 40px;margin-left: 10px;">126</span>
+                </div>
+                <div class="tongquan--solieu--item" style=" border:2px solid #E33D48">
+                    <h6 style="font-size: 20px;">Doanh thu</h6>
+                    <span style="font-size: 40px;margin-left: 10px;">30,031,800</span>
+                </div>
+                <div class="tongquan--solieu--item" style=" border:2px solid #E0DA36">
+                    <h6 style="font-size: 20px;">Khách hàng</h6>
+                    <span style="font-size: 40px;margin-left: 10px;">120</span>
+                </div>
+            </div>
+            <div class="container" style="width: 100%;height: 100%">
+                <div class="container--title">
+                    <h6 style="font-size: 18px;text-align:center">Doanh thu theo tháng</h6>
+                </div>
+                <canvas id="myChart" style="width: 100%; height: 400px; padding:0 20px;"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="/admin/javascript/chart.js"></script>
+    <script src="/admin/javascript/drawchart.js"></script>
+</body>
+</html>

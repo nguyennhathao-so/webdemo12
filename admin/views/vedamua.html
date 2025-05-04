@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quản lý vé</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+        color: #000000;
+        background-color: #E9E9E9;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .quanly--header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .container {
+      background-color: #fff;
+      margin: 30px auto;
+      width: 97%;
+      padding: 30px;
+      min-height: 80vh;
+    }
+
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .title-row h3 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .filter-input {
+      padding: 6px 10px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      width: 120px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    .status {
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .paid {
+      background-color: #e0f8e9;
+      color: #0caa3d;
+      border: 1px solid #0caa3d;
+    }
+
+    .cancelled {
+      background-color: #fff2d4;
+      color: #ff9900;
+      border: 1px solid #ff9900;
+    }
+
+    .action-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .btn-delete {
+      background-color: red;
+    }
+
+    .btn-edit {
+      background-color: #2AA7E0;
+    }
+
+    .btn-icon img {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quanly--header">Quản lý vé</div>
+
+  <div class="container">
+    <div class="title-row">
+      <h3>Vé đã mua</h3>
+      <input class="filter-input" type="text" placeholder="Lọc" />
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mã đơn hàng</th>
+          <th>Tên sự kiện</th>
+          <th>Loại vé</th>
+          <th>Trạng thái</th>
+          <th>Ngày mua</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#">VN001</a></td>
+          <td>Hobby Horizon ss2</td>
+          <td>Vé Ngày</td>
+          <td><span class="status cancelled">Huỷ</span></td>
+          <td>05/06/2024</td>
+          <td>
+            <div class="action-btns">
+              <button class="btn-icon btn-delete"><img src="/admin/icons/x32_.svg" alt="Xóa" /></button>
+              <button class="btn-icon btn-edit"><img src="/admin/icons/Frame.svg" alt="Sửa" /></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

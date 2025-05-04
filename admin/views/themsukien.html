@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        a{
+            text-decoration: none;
+            color:#000000;
+        }
+        body{
+            color: #000000;
+            background-color: #E9E9E9;
+            font-family: Inter;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .quanly--header {
+            padding: 22px;
+            background-color: #ffffff;
+            text-align: center;
+            font-size: clamp(16px, 40px);;
+            font-weight:bold;
+            user-select: none;
+            text-transform: uppercase;
+        }
+        .btn--header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:20px 0 ;
+        }
+        .btn{
+            color:white;
+            border:none;
+            padding:10px 20px; 
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+            display:flex;
+            align-items:center;
+            font-weight: bold;
+        }
+
+        .lable{
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .input{
+            font-size:16px;
+            font-weight: 700;
+        }
+
+        .input::placeholder {  
+            opacity: 0.5;
+            font-weight: 100;
+            font-size: 16px;
+        }
+
+    </style>
+    <title>Thêm sự kiện</title>
+</head>
+<body>
+    <div class="quanly" style="width:100%;height:100%;min-height:100vh">
+        <h2 class="quanly--header">Thêm sự kiện </h2>
+        <div class="quanly--content" style="user-select:none;background-color: white;margin:25px auto 0; width:97%;padding-bottom:10px;height:100%; max-height: 98vh; overflow-y: auto;">
+        <form class="quanly--form" style="padding:27px 48px 38px 32px;" action="#" method="POST">
+            <div>
+                <h5 style ="font-size: 30px;">Thêm sự kiện</h5>
+            </div>
+            <div class="btn--header" >
+                <div style="display:flex;align-items:center; gap:27px">
+                    <button class="btn" style="background-color:#4495F2">+ Thêm sự kiện</button>
+                    <button class="btn" style="background-color:#F58F5F">Cập nhật</button>
+                </div>
+                <button style=" font-weight:bold;background-color:#ff3b3b; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; font-size:16px; display:flex; align-items:center;">
+                    <img src="/admin/icons/_x32_.svg" alt="trash" style="width:20px; height:20px; margin-right:10px;">
+                    Xóa sự kiện
+                </button>  
+            </div>
+            <div class="infomation--quanly-ve" style="margin-top:20px; width:100%; display:flex; justify-content:space-between; gap:20px;">
+                <div style="width:45%">
+                <form class="noidung--quanly-ve" action="#" method="POST" style="width:100%">
+                    <label class="lable" for="eventName" style="display:block; margin-bottom:10px;">Tên sự kiện:</label>
+                    <input class="input" type="text" id="eventName" name="eventName" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px;" placeholder="vd: Hòa nhạc mùa hè">
+                
+                    <label class="lable" for="ticketQuantity" style="display:block; margin-bottom:10px;">Số lượng vé:</label>
+                    <input class="input" type="number" id="ticketQuantity" name="ticketQuantity" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px; " placeholder="vd: 1000">
+
+                    <label class="lable" for="eventDate" style="display:block; margin-bottom:10px;">Ngày diễn ra:</label>
+                    <input class="input" type="date" id="eventDate" name="eventDate" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px; " placeholder="vd: 2023-10-01">
+
+                    <label class="lable" for="eventLocation" style="display:block; margin-bottom:10px;">Địa điểm:</label>
+                    <input class="input" type="text" id="eventLocation" name="eventLocation" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px; " placeholder="vd: Nhà hát lớn Hà Nội">
+
+                    <label class="lable" for="eventDescription" style="display:block; margin-bottom:10px;">Nội dung:</label>
+                    <textarea class="input" id="eventDescription" name="eventDescription" rows="4" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px;" placeholder="vd: Đây là một sự kiện âm nhạc lớn"></textarea>
+                </form></div>
+                <div class="anh" style="width:45%">
+                    <label for="imageUpload" class="btn" style="background-color:#4495F2; cursor:pointer; width:fit-content;">
+                        + Tải ảnh
+                    </label>
+                    <input type="file" id="imageUpload" accept="image/*" style="display:none;">
+                    
+                    <!-- Ảnh mặc định -->
+                    <img id="previewImage" src="/admin/images/placeholder-icon-design-free-vector.jpg" alt="Ảnh tải lên" style="width: 90%; height: auto; margin: 20px auto 0; border-radius: 5px; object-fit:cover;">
+                </div>
+                
+            </div>
+        </form>
+    </div>
+        
+
+    </div>
+    <script>
+        // Lắng nghe sự kiện khi người dùng chọn ảnh (thay đổi input type="file")
+        document.getElementById("imageUpload").addEventListener("change", function(event) {
+            // Lấy thẻ <img> để hiển thị ảnh xem trước
+            const image = document.getElementById("previewImage");
+
+            // Lấy file ảnh đầu tiên được người dùng chọn
+            const file = event.target.files[0];
+
+            // Nếu người dùng có chọn một file ảnh
+            if (file) {
+                // Tạo một đối tượng FileReader để đọc nội dung ảnh
+                const reader = new FileReader();
+
+                // Khi FileReader đọc xong, gán ảnh vào thẻ <img>
+                reader.onload = function(e) {
+                    image.src = e.target.result; // e.target.result là đường dẫn ảnh đã đọc
+                };
+
+                // Đọc file ảnh dưới dạng URL base64
+                reader.readAsDataURL(file);
+            } else {
+                // Nếu không chọn ảnh hoặc xóa file -> gán ảnh mặc định
+                image.src = "images/default-image.jpg";
+            }
+        });
+    </script>
+
+</body>
+</html>

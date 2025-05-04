@@ -1,0 +1,309 @@
+body {
+    font-family: Akshar, sans-serif;
+    background: #1a1a1a;
+    color: white;
+}
+
+.nav { position: relative; 
+    display: inline-block; 
+}
+
+.dropdown { 
+    display: none; 
+    position: absolute; 
+    background-color: rgba(128, 128, 128, 0.8); 
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); 
+    z-index: 1; 
+    top: 110%;
+    right: 0; /* Mốc từ bên phải */
+    transform: translateX(100%); /* Bắt đầu từ bên phải */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.nav:hover .dropdown,
+.nav .dropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Cho phép tương tác khi hiển thị */
+    transition: opacity 0.3s ease; /* Hiệu ứng hiện lên nhanh, không delay */
+} 
+
+.dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 4px;
+}
+
+.dropdown a:hover { 
+    background-color: #ddd; 
+}
+
+.nav:hover .dropdown,
+.nav .dropdown:hover,
+.nav:hover .dropdown:hover {
+    display: block;
+}
+
+#content {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 40rem;
+    width: 50%;
+    margin: auto;
+    position: relative;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Chiều cao tối thiểu để căn giữa theo chiều dọc */
+}
+
+.center .form-group-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung */
+}
+
+.account-page .form-group {
+    width: 100%; /* Chiều rộng tối đa */
+}
+
+.center .info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.center .text-content {
+    text-align: center; /* Căn giữa văn bản */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    height: 100%; /* Đảm bảo phần tử chiếm toàn bộ chiều cao của phần tử cha */
+}
+
+.center .separator {
+    border-top: 1px solid white;
+    width: calc(100% - 40px);
+    margin: 0px auto;
+}
+
+
+.account-page .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.account-page label {
+    display: block;
+}
+
+.account-page input,
+.account-page button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.account-page input {
+    background: #333;
+    color: white;
+}
+
+.account-page .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.account-page button {
+    background: #f90;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: auto;
+}
+
+.account-page button:hover {
+    background: #e80;
+}
+
+.account-page .form-group-gioi-tinh {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.account-page .form-group-gioi-tinh label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row-reverse;
+}
+
+.account-page input[type='radio'] {
+    accent-color: green;
+    transform: scale(1.2);
+}
+
+.account-page .info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.account-page .text-content {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.account-page .separator {
+    width: 100%;  /* Chiếm toàn bộ chiều rộng */
+    height: 1px;  /* Độ dày của đường kẻ */
+    background-color: #ccc;  /* Màu của đường kẻ */
+    border: none;  /* Xóa viền nếu có */
+    margin: 10px 0; /* Tạo khoảng cách trên/dưới */
+}
+
+.account-page .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.account-page label {
+    display: block;
+}
+
+.account-page input,
+.account-page button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.account-page input {
+    background: #333;
+    color: white;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Căn giữa nút */
+}
+
+.account-page button {
+    background: #f90;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: auto;
+}
+
+.account-page button:hover {
+    background: #e80;
+}
+
+.account-page .form-group-gioi-tinh {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.account-page .form-group-gioi-tinh label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row-reverse;
+}
+
+.account-page input[type='radio'] {
+    accent-color: green;
+    transform: scale(1.2);
+}
+
+
+/* ticket  */
+.ticket {
+    width: 80%;
+    background-color: #222;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0px;
+    border: 2px solid #fff;
+    position: relative;
+
+}
+
+.ticket .ticket-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-info {
+    width: 75%;
+}
+
+.ticket-info p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+
+
+.ticket-date {
+    background-color: #ffb100;
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: 70px;
+}
+
+.ticket-date .month {
+    font-size: 12px;
+}
+
+.ticket-date .day {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.ticket-date .weekend {
+    font-size: 12px;
+}

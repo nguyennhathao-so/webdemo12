@@ -1,0 +1,624 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* khôi phục lại cỡ chữ mặc định theo rem */
+body {
+  font-size: 1.6rem;
+  font-family: 'Akshar', sans-serif;
+  background-color: #131A21;
+}
+
+/* ==============================common=============================== */
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vanban {
+  font-weight: 500;
+  line-height: normal;
+  font-size: 2.4rem;
+  text-transform: capitalize;
+  color: #F5A201;
+  position: relative; /* Ensure relative positioning for the pseudo-element */
+  overflow: hidden; /* Prevent overflow */
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.vanban-muave{
+color: #FFF;
+text-align:center;
+font-family: Akshar;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+/*======================================================================================================= trangchu.index  ===============================================*/
+/*====================================== header  ===============================================*/
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 20rem;
+  user-select: none;
+  background-color: #000;
+}
+
+.menu--detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7.2rem;
+}
+
+.menu .logo{
+  user-select: none;
+}
+
+.menu .vanban::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.menu .vanban:hover::after {
+  width: 100%;
+}
+
+.menu .login {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 50%;
+}
+
+/*====================================== figure  ===============================================*/
+.figure {
+  position: relative;
+  width: 100%;
+  height: auto; /* Chiều cao toàn màn hình */
+}
+
+.figure--image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Đảm bảo ảnh phủ toàn bộ khung */
+}
+
+.section--content {
+  position: absolute;
+  top: 90%;
+  left: 20%;
+  text-align: left;
+  transform: translate(-50%, -50%);
+}
+
+.section--contents .vanban{
+  color: white;
+}
+
+.mua--ve {
+  background-color: #FFA500; /* Màu vàng */
+  color: #14181C ;
+  font-weight: 700;
+  padding: 10px 25px;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin-bottom: 10px;
+}
+
+.section--content--title {
+  font-size: 2rem;
+}
+.section--content--title span{
+  color:#FFA500;
+}
+
+.section--content--text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/*====================================== main  ===============================================*/
+.noidung{
+  padding :3.2rem 0;
+  min-height: 50rem;
+}
+
+.thong-tin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rem;
+  padding: 0 20rem;
+}
+
+.thong-tin--content--image,
+.thong-tin--content {
+  flex: 1; /* Chia đều không gian */
+  max-width: 500px; /* Đặt giới hạn tối đa để tránh quá lớn */
+}
+
+.thong-tin--content--image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Thu nhỏ ảnh khi quá lớn */
+}
+
+.ThongTin--contents1,
+.ThongTin--contents2,
+.ThongTin--contents3,
+.ThongTin--contents4,.ThongTin--contents5 {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.thong-tin p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  line-height: normal;
+  margin-bottom: 1rem;
+}
+
+.thong-tin h2 {
+  color: #FFF;
+  font-family: Akshar;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.noidung .vip {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  margin:4rem 0 2.5rem;
+  text-transform: uppercase;
+}
+
+.thong-tin--content--image {
+  border-radius: 20px;
+}
+
+.vip-badge {
+  display: inline-block; /* Để có thể áp dụng padding và border-radius */
+  background-color: #00c853; /* Màu xanh lá */
+  color: white;
+  font-weight: 500;
+  font-size: 2.4rem;
+  padding: 5px 10px;
+  border-radius: 15px;
+  text-transform: uppercase;
+}
+
+.noidung .mua--ve {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem auto; /* Use auto for left and right margins to center the button */
+}
+
+/* =========================== COSPLAYER / YTUBER / GAMER =================== */
+@keyframes animate {
+  from { transform: translateX(0); }  
+  to { transform: translateX(-100%); }
+}
+
+.animation {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 2.5rem 0;
+  background-color: #000;
+}
+
+.animation-content {
+  display: flex;
+  gap: 2.5rem;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.animation-content figure {
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animation-content img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.animation-content figcaption {
+  margin-top: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/* =========================== nhà tài trợ =================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tự động co giãn */
+  gap: 20px; /* Khoảng cách giữa các logo */
+  justify-content: center; /* Căn giữa khi không đủ số lượng logo */
+  align-items: center;
+  padding:  0 20rem;
+}
+
+.grid img {
+  max-width: 100%;
+  max-height: 100px; /* Điều chỉnh chiều cao logo */
+  object-fit: contain;
+}
+
+/* =========================== animation ảnh =================== */
+.danhsach{
+  padding:2.5rem;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }  /* Bắt đầu ngay tại vị trí ban đầu */
+  to { transform: translateX(-100%); } /* Di chuyển hết sang trái */
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 2.5rem 0;
+  background-color: #000;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 10px;
+  animation: marquee 10s linear infinite;
+  will-change: transform; /* Tối ưu hóa hiệu ứng */
+}
+
+.marquee-content img {
+  width: 200px;
+  height: auto;
+}
+
+
+
+/*====================================== footer  ===============================================*/
+.footer{
+  background-color: #000;
+}
+.footer-content{
+  display:flex;
+  padding: 5rem 20rem;
+  gap:4.5rem;
+}
+
+
+.footer-content .lienhe{
+  margin-top:auto;
+}
+
+.footer-content .lienhe .vanban{
+  color: #FFFFFF;
+  font-size:1.6rem;
+  font-weight: 700;
+}
+
+.footer-content .lienhe .mang-xa-hoi{
+  margin-bottom: 0.2rem;
+}
+
+
+/*======================================================================================================= muathe.index  ===============================================*/
+
+
+.noidung .thong-tin-muave{
+  background-image: url(../images/Nen-mua-ve.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Đảm bảo nút nằm ở dưới */
+  align-items: center;
+  height: 100%; /* Giữ tất cả thẻ vé có cùng chiều cao */
+  min-height: 350px; /* Có thể điều chỉnh theo thiết kế */
+  padding: 20px;
+  background-size: cover;
+}
+
+.cac-ve {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 6.8rem;
+  margin:0 20rem;
+}
+
+.thong-tin-muave .mota p{
+  color: #FFF;
+  text-align: center;
+  font-family: Akshar;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ten-ve {
+  margin-top: 7rem;
+}
+.muaveMain .vip{
+  margin-top:4.5rem;
+}
+
+.mota p{
+  padding-bottom:2rem;
+}
+
+.muaveMain .mua--ve{
+  margin-top: auto; /* Đẩy nút xuống dưới */
+  border:none;
+}
+
+.gia-ve {
+  display: flex;
+  align-items: baseline; /* Căn chữ VND theo đáy của số */
+  justify-content: center;
+  gap: 5px; /* Khoảng cách giữa số và VND */
+  padding:2rem 0 6rem;
+}
+
+.so-gia {
+  font-size: 36px; /* Cỡ chữ lớn hơn */
+  font-weight: bold;
+  color: #FFA500; /* Màu cam như trong ảnh */
+}
+
+.don-vi {
+  font-size: 20px; /* Cỡ chữ nhỏ hơn */
+  font-weight: bold;
+  color: #FFA500; /* Cùng màu với số */
+}
+
+/*======================================================================================================= faq.index  ===============================================*/
+/* Định dạng tổng thể cho phần câu hỏi */
+.FQAMain {
+  min-height: 70rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Định dạng tiêu đề */
+.vip.vanban {
+  color: #FFA500;
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Định dạng container chứa danh sách câu hỏi */
+.cac-cau-hoi {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 50%;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+/* Định dạng từng câu hỏi */
+.cau-hoi {
+  width: 100%;
+  padding: 1.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Định dạng tiêu đề câu hỏi */
+.cau-hoi h3 {
+  color: #F7F7F7;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Định dạng nội dung câu hỏi */
+.cau-hoi p {
+  display:none;
+  color: #F7F7F7;
+  font-size: 1.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.cau-hoi.active p {
+  display: block;
+}
+
+
+
+/*======================================================================================================= suKien.index  ===============================================*/
+.SuKienMain .vip{
+  padding-bottom: 0;
+}
+
+/* Định dạng container chứa danh sách sự kiện */
+.su-kien {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  padding:0 2rem;
+}
+
+/* Định dạng từng sự kiện */
+.su-kien-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+/* Định dạng ngày tháng sự kiện */
+.su-kien-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFA500;
+  color: #000;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 20rem;
+  height: auto;
+  min-height: 20rem;
+}
+
+.date {
+  max-width: 100%; /* Không vượt quá kích thước của .su-kien-date */
+  font-size: 6.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding:3rem 0;
+}
+
+.date:hover {
+  overflow: visible;
+  white-space: normal;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 10;
+}
+/* Định dạng nội dung sự kiện */
+.su-kien-content {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+.su-kien-content h3 {
+  color: #FFF;
+  font-family: Akshar;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top:5.6rem;
+}
+
+.su-kien-content p {
+  color: #FFF;
+  font-family: Akshar;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 2rem 0 0.5rem;
+}
+
+.su-kien-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top:2rem;
+}
+
+.su-kien-buttons button {
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dang-ky-ngay {
+  background-color: #FFA500;
+  color: #14181C;
+  font-weight: bold;
+}
+
+.chi-tiet {
+  background-color: #F7F7F7;
+  color: #14181C;
+  font-weight: bold;
+}
+
+.da-het-hang {
+  background-color: #FF0000;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+/* Định dạng hình ảnh sự kiện */
+.su-kien-image img {
+  width: 30rem;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  border:1px solid #FFF;        
+}
+
+.thanh-ngang{
+  max-width: 200rem;
+  width: 80%;
+  margin: 2rem auto; /* Canh giữa */
+  height:1px;
+  border:none;
+  background-color:#FFF;
+}
+
+.su-kien-content .icons{
+  object-fit:contain;
+  width: 30px;
+}
+
+.su-kien-content .dia-diem{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin:0.5rem 0 ;
+}
+.su-kien-content .thoi-gian{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin:0.5rem 0 ;
+}

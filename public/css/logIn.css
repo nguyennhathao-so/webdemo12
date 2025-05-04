@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box; /* Đảm bảo padding & border không làm thay đổi kích thước */
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+body{
+    background-color: rgb(35, 35, 35);
+    font-family: Akshar;
+}
+
+#wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form-login{
+    width: 400px;
+    height:500px;
+    background-color: #F1A001;
+    border-radius:30px;
+    position: relative;
+}
+
+.head{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top:20px;
+    z-index:0;
+    user-select: none;
+}
+
+.head img{
+    width: 105.14px;
+}
+
+.form-heading{
+    color: #000;
+    font-size: 40px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.form-login-detail{
+    background-color: #0F1419;
+    position: absolute;
+    top:100px;
+    left: 2px;   /* Cách mép trái 2px */
+    right: 2px;  /* Cách mép phải 2px */
+    bottom: 2px; /* Cách mép dưới 2px */
+    border-radius: 0 0 30px 30px;
+    user-select: none;
+}
+
+
+.vanban{
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+/* ====================================================== nơi nhập thông tin ======================================*/
+.form-group{
+    margin:35px 30px  0;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.form-group label{
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 500;
+    user-select: none;
+}
+.input-field{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border:none;
+    border-radius:10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Làm mờ */
+    color:white;
+    font-size:1rem;
+    outline:none
+}
+
+.input-field::placeholder {
+    opacity: 0.6;
+}
+
+/* ====================================================== nút đăng nhập ======================================*/
+.btn{
+    background-color: #F1A001;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #fff383;
+}
+
+/* ====================================================== footer ======================================*/
+.quen-mat-khau{
+    margin-top:14px;
+    margin-bottom: 10px;
+}
+.dang-ky span{
+    color: #ADADAD;
+}
+
+.chinh-sach{
+    font-size: 12px;
+    position: absolute;
+    bottom:13px;
+    left: 15%
+}
+.dieu-khoan,.bao-mat{
+    text-decoration: underline;
+}
+
+/* ====================================================== form đăng ký ======================================*/
+
+.dangky{
+    margin-top: 20px !important;
+}
